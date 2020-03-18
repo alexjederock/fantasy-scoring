@@ -29,15 +29,19 @@ function returnkickPoints(player) {
     let ptsPeryard = player.stats.return.kickreturn.yards / 15
     let ptsPertouch = player.stats.return.kickreturn.touchdowns * 6
     let ptsPerfumbles = player.stats.return.kickreturn.fumbles * -3
-    return ptsPertouch + ptsPeryard + ptsPerfumbles
+
+
+    return ptsPerfumbles + ptsPertouch + ptsPeryard
 
 }
 
 function returnpuntPoints(player) {
-    let ptsPertouch = player.stats.return.puntreturn.touchdowns * 6
     let ptsPeryard = player.stats.return.puntreturn.yards / 15
+    let ptsPertouch = player.stats.return.puntreturn.touchdowns * 6
     let ptsPerfumbles = player.stats.return.puntreturn.fumbles * -3
-    return ptsPertouch + ptsPeryard + ptsPerfumbles
+
+
+    return ptsPerfumbles + ptsPertouch + ptsPeryard
 }
 
 
@@ -51,13 +55,13 @@ function calculateScore(player) {
 
 
     } else if (player.position === "RB") {
-        return rushingPoints(player) + receivingPoints(player) + returnpuntPoints(player) + returnkickPoints(player)
+        return rushingPoints(player) + receivingPoints(player) + returnkickPoints(player) + returnpuntPoints(player)
 
 
 
 
     } else if (player.position === "WR") {
-        return rushingPoints(player) + receivingPoints(player) + returnpuntPoints(player) + returnkickPoints(player)
+        return rushingPoints(player) + receivingPoints(player) + returnkickPoints(player) + returnpuntPoints(player)
 
 
 
